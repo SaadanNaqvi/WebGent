@@ -1,0 +1,1076 @@
+<HTML>
+<HEAD>
+
+<style>
+
+body
+{
+    background: #fff;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+footer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+.navigation
+{
+    position: fixed;
+    inset: 20px 0 20px 20px;
+    width: 75px;
+    background: #89CFF0;
+    transition: 0.5s;
+}
+
+.navigation.open
+{
+    width: 250px;
+}
+
+.navigation .menuToggle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 23px;
+}
+.navigation .menuToggle::before
+{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(-8px);
+    transition: 0.5s;
+}
+
+.navigation .menuToggle::after
+{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(8px);
+    transition: 0.5s;
+    box-shadow: 0 -8px 0 #333;
+}
+
+
+
+.navbar ul
+{
+    list-style-type: none;
+    margin: 2.5px;
+    padding: 0;
+}
+.navbar li
+{
+    display: inline-block;
+}
+.navbar a
+{
+    text-decoration: none;
+    color: #000;
+    width: 100px;
+}
+
+
+.headerdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headerfontdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerfontdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerfontdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headersizedropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headersizedropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headersizedropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headerbolddropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerbolddropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerbolddropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headeritalicdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headeritalicdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headeritalicdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headercolourdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headercolourdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headercolourdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+
+
+
+
+
+.footerdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footerfontdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerfontdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerfontdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footersizedropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footersizedropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footersizedropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footerbolddropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerbolddropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerbolddropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footeritalicdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footeritalicdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footeritalicdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footercolourdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footercolourdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footercolourdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+</style>
+
+<TITLE>WebGent</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+//Global Variables
+
+var headertext,
+    headerfont = sessionStorage.getItem("headerfont"),
+    headersize = sessionStorage.getItem("headersize"),
+    headerbold = sessionStorage.getItem("headerbold"),
+    headerslant = sessionStorage.getItem("headerslant"),
+    headercolour = sessionStorage.getItem("headercolour");
+
+var footertext,
+    footerfont = sessionStorage.getItem("footerfont"),
+    footersize = sessionStorage.getItem("footersize"),
+    footerbold = sessionStorage.getItem("footerbold"),
+    footerslant = sessionStorage.getItem("footerslant"),
+    footercolour = sessionStorage.getItem("footercolour");
+
+
+//Global Classes
+class HeaderData
+{
+    constructor(Text, Font, Size, Bold, Slant, Colour) 
+    {
+        this.header =
+        {
+            text: Text,
+            font: Font,
+            size: Size,
+            bold: Bold, 
+            slant: Slant, 
+            colour: Colour
+        };
+    };
+}
+
+class FooterData
+{
+    constructor(Text, Font, Size, Bold, Slant, Colour) 
+    {
+        this.footer =
+        {
+            text: Text,
+            font: Font,
+            size: Size,
+            bold: Bold, 
+            slant: Slant, 
+            colour: Colour
+        };
+    };
+}
+
+window.addEventListener("load", OnLoad)
+
+function OnLoad()
+{
+    changeHeaderData("Arial", 24, "normal", "normal", "black");
+    changeFooterData("Arial", 24, "normal", "normal", "black");
+}
+
+
+function main()
+{
+    var Loop = true;
+
+    while(Loop)
+    {
+        alert("Welcome to WebGent by LNC Studios");
+        alert("Do you want to:");
+        var choice =  prompt("1: Sign up\n2: Login\n3: Exit");
+
+        switch(choice)
+        {
+            case "1":
+                Loop = false
+                Signup()
+                break;
+
+            case "2":
+                Loop = false
+                Login()
+                break;
+            case "3":
+                Loop = false
+                alert("Goodbye....")
+                window.close(   )
+                break;
+            case "4":
+                Loop = false
+                localStorage.clear()
+                break;
+            case "5":
+                Loop = false
+                webInit()
+                break;
+            break;
+        }
+    }
+}
+
+function Signup()
+{
+    var choice1 = prompt("Do you want to Signup? (Y or N)");
+
+    if(choice1 == "Y")
+    {
+        var Loop1 = true;
+
+        while(Loop1)
+        {
+            let username = prompt("What is your Username?"),
+                password = prompt("What is your Password?");
+
+            let formData = JSON.parse(localStorage.getItem("formData")) || [];
+
+            let exist = formData.length && JSON.parse(localStorage.getItem("formData")).some(data => data.username === username);
+
+            if(!exist)
+            {
+                formData.push({ username, password });
+
+                localStorage.setItem("formData", JSON.stringify(formData));
+
+                Loop1 = false;
+
+                alert(username+" has signed up!");
+
+                main();
+            }
+            else
+            {
+                alert("This username already exisits");
+                alert("Do you want to: ");
+
+                var Loop2 = true;
+
+                while(Loop2)
+                {
+                    var choice = prompt("1: Try again\n2: Go back");
+
+                    switch(choice)
+                    {
+                        case "1":
+                            Loop2 = false
+                            break;
+                        case "2":
+                            Loop1 = false
+                            Loop2 = false
+                            main()
+                            break;
+                        default:
+                            alert("Invalid Option")
+                            break;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    else
+    {
+        main();
+    }
+}
+
+function Login()
+{
+    var choice1 = prompt("Do you want to login? (Y or N)");
+
+    if(choice1 == "Y")
+    {
+        var Loop1 = true
+        while(Loop1)
+        {
+            let username = prompt("What is your Username?"),
+                password = prompt("What is your Password?");
+            
+            let formData = localStorage.getItem("formData") || [];
+
+            let exist = formData.length && JSON.parse(localStorage.getItem("formData")).some(data => data.username === username && data.password === password);
+
+            if(!exist)
+            {
+                var Loop2 = true
+
+                while(Loop2)
+                {
+                    alert("Your username or password is incorrect");
+
+                    alert("Do you want to:");
+
+                    var choice2 = prompt("1: Try Again\n2: Exit");
+
+                    switch(choice2)
+                    {
+                        case "1":
+                            Loop2 = false
+                            break;
+                        case "2":
+                            Loop2 = false
+                            Loop1 = false
+                            main()
+                            break; 
+                        default:
+                            alert("Invalid Option")
+                            break;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Loop1 = false;
+                console.log(username+" has logged in");
+
+                sessionStorage.setItem("loggedUser", username)
+
+                webDecisions();
+            }
+        }
+    }
+    else
+    {
+        main();
+    }
+}
+
+function webDecisions()
+{
+    var Loop = true;
+
+    while(Loop)
+    {
+        alert("Do you want to:");
+
+        var choice = prompt("1: Create a new website\n2: Load a website\n3: Go back");
+
+        switch(choice)
+        {
+            case "1":
+                Loop = false
+                newWeb()
+                break;
+            case "2":
+                Loop = false
+                loadWeb()
+                break;
+            case "3":
+                Loop = false
+                main()
+                break;
+            default:
+                alert("Invalid Option")
+                break;
+            break;
+        }
+    }
+}
+
+function newWeb()
+{
+    var Loop1 = true;
+    var count = 0;
+
+    while(Loop1)
+    {
+        let webname = prompt("What do you want to name your website?"),
+            username = sessionStorage.getItem("loggedUser");
+        
+        let nameData = JSON.parse(localStorage.getItem("nameData")) || [];
+
+        let filteredNameData = nameData.filter(obj => obj.username === username);
+
+        for(let i = 0; i < filteredNameData.length; i++)
+        {
+            count++
+        }
+
+        alert(count)
+        let exist = nameData.length && JSON.parse(localStorage.getItem("nameData")).some(data => data.username == username && data.webname == webname);
+
+        if(!exist)
+        {
+            if(count < 5)
+            {
+                let exist = nameData.length && JSON.parse(localStorage.getItem("nameData")).some(data => data.webname == webname);
+
+                if(!exist)
+                {
+                    nameData.push({ username, webname});
+
+                    localStorage.setItem("nameData", JSON.stringify(nameData));
+
+                    alert("Website Created")
+
+                    console.log("Creating WEBSITE number "+count+" for "+username+" called "+webname);
+
+                    webInit();
+
+                    Loop1 = false;
+                }
+                else
+                {
+                    alert("Duplicate found!!!\nYou have already used this name");
+                }
+            }
+            else if(count > 5)
+            {
+                var Loop2 = true;
+
+                while(Loop2)
+                {
+                    alert("You have reached the 5 website limit...");
+                    alert("Do you want to..");
+                    var limit = prompt("1: Delete a Website\n2: Load another Website\n3: Log Out");
+
+                    switch(limit)
+                    {
+                        case "1":
+                            Loop1 = false;
+                            Loop2 = false;
+                            WebDel();
+                            break;
+                        case "2":
+                            Loop1 = false;
+                            Loop2 = false;
+                            LoadWeb();
+                            break;
+                        case "3":
+                            Loop1 = false;
+                            Loop2 = false;
+                            main();
+                            break;
+                        default:
+                            alert("Invalid Option");
+                            break;
+                        break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            alert("This website name is already taken!!");
+        }
+
+    }
+}
+
+function webInit()
+{
+    Header();
+    Footer();
+}
+
+function Header()
+{
+    let headertext = document.getElementById("header").innerHTML,
+        headerfont = sessionStorage.getItem("headerfont"),
+        headersize = sessionStorage.getItem("headersize"),
+        headerbold = sessionStorage.getItem("headerbold"),
+        headerslant = sessionStorage.getItem("headerslant"),
+        headercolour = sessionStorage.getItem("headercolour");
+
+    if(headerfont == null)
+    {
+        headerfont = "Arial";
+    }
+    if(headersize == null)
+    {
+        headersize = 24 + "px";
+    }
+    if(headerbold == null)
+    {
+        headerbold = "normal";
+    }
+    if(headerslant == null)
+    {
+        headerslant = "normal";
+    }
+    if(headercolour == null)
+    {
+        headercolour = "black";
+    }
+
+    let headerData = new HeaderData(headertext, headerfont, headersize, headerbold, headerslant, headercolour);
+
+    sessionStorage.setItem("headerData", JSON.stringify(headerData));
+}
+
+function changeHeaderData(headerfont, headersize, headerbold, headerslant, headercolour)
+{
+    document.getElementById("header").style.fontFamily = headerfont;
+    sessionStorage.setItem("headerfont", headerfont);
+
+    document.getElementById("header").style.fontSize = headersize;
+    sessionStorage.setItem("headersize", headersize);
+
+    document.getElementById("header").style.fontWeight = headerbold;
+    sessionStorage.setItem("headerbold", headerbold);
+
+    document.getElementById("header").style.fontStyle = headerslant;
+    sessionStorage.setItem("headerslant", headerslant); 
+
+    document.getElementById("header").style.color = headercolour;
+    sessionStorage.setItem("headercolour", headercolour);
+}
+
+
+function Footer()
+{
+    let footertext = document.getElementById("footer").innerHTML,
+        footerfont = sessionStorage.getItem("footerfont"),
+        footersize = sessionStorage.getItem("footersize"),
+        footerbold = sessionStorage.getItem("footerbold"),
+        footerslant = sessionStorage.getItem("footerslant"),
+        footercolour = sessionStorage.getItem("footercolour");
+
+    if(footerfont == null)
+    {
+        footerfont = "Arial";
+    }
+    if(footersize == null)
+    {
+        footersize = 24 + "px";
+    }
+    if(footerbold == null)
+    {
+        footerbold = "normal";
+    }
+    if(footerslant == null)
+    {
+        footerslant = "normal";
+    }
+    if(footercolour == null)
+    {
+        footercolour = "black";
+    }
+
+    let footerData = new FooterData(footertext, footerfont, footersize, footerbold, footerslant, footercolour);
+
+    sessionStorage.setItem("footerData", JSON.stringify(footerData));
+}
+
+
+function changeFooterData(footerfont, footersize, footerbold, footerslant, footercolour)
+{
+    document.getElementById("footer").style.fontFamily = footerfont;
+    sessionStorage.setItem("footerfont", footerfont);
+
+    document.getElementById("footer").style.fontSize = footersize;
+    sessionStorage.setItem("footersize", footersize);
+
+    document.getElementById("footer").style.fontWeight = footerbold;
+    sessionStorage.setItem("footerbold", footerbold);
+
+    document.getElementById("footer").style.fontStyle = footerslant;
+    sessionStorage.setItem("footerslant", footerslant); 
+
+    document.getElementById("footer").style.color = footercolour;
+    sessionStorage.setItem("footercolour", footercolour);
+}
+
+function showMenu(e, type) 
+{
+    e.preventDefault();
+
+    document.body.addEventListener("click", function() 
+    {
+        document.getElementById(type+"dropdown-menu").style.display = "none";
+    });
+
+    var menu = document.getElementById(type+"dropdown-menu");
+    menu.style.top = e.clientY + "px";
+    menu.style.left = e.clientX + "px";
+    menu.style.display = "block";
+}
+
+function showSubMenu(event, type, contentEditable) 
+{
+    event.preventDefault();
+    event.stopPropagation();
+
+    var EditableContent = document.getElementById(type+contentEditable+"dropdown-menu");
+    EditableContent.style.display = "block";
+    EditableContent.style.top = event.clientY + "px";
+    EditableContent.style.left = event.clientX + "px";
+}
+
+document.addEventListener("click", function(event) 
+{
+    var headerfontDropdown = document.getElementById("headerfontdropdown-menu");
+    if (headerfontDropdown.style.display === "block") 
+    {
+        headerfontDropdown.style.display = "none";
+    }
+    var headersizeDropdown = document.getElementById("headersizedropdown-menu");
+    if (headersizeDropdown.style.display === "block") 
+    {
+        headersizeDropdown.style.display = "none";
+    }
+    var headerboldDropdown = document.getElementById("headerbolddropdown-menu");
+    if (headerboldDropdown.style.display === "block") 
+    {
+        headerboldDropdown.style.display = "none";
+    }
+    var headeritalicDropdown = document.getElementById("headeritalicdropdown-menu");
+    if (headeritalicDropdown.style.display === "block") 
+    {
+        headeritalicDropdown.style.display = "none";
+    }
+    var headercolourDropdown = document.getElementById("headercolourdropdown-menu");
+    if (headercolourDropdown.style.display === "block") 
+    {
+        headercolourDropdown.style.display = "none";
+    }
+
+
+    
+    var footerfontDropdown = document.getElementById("footerfontdropdown-menu");
+    if (footerfontDropdown.style.display === "block") 
+    {
+        footerfontDropdown.style.display = "none";
+    }
+    var footersizeDropdown = document.getElementById("footersizedropdown-menu");
+    if (footersizeDropdown.style.display === "block") 
+    {
+        footersizeDropdown.style.display = "none";
+    }
+    var footerboldDropdown = document.getElementById("footerbolddropdown-menu");
+    if (footerboldDropdown.style.display === "block") 
+    {
+        footerboldDropdown.style.display = "none";
+    }
+    var footeritalicDropdown = document.getElementById("footeritalicdropdown-menu");
+    if (footeritalicDropdown.style.display === "block") 
+    {
+        footeritalicDropdown.style.display = "none";
+    }
+    var footercolourDropdown = document.getElementById("footercolourdropdown-menu");
+    if (footercolourDropdown.style.display === "block") 
+    {
+        footercolourDropdown.style.display = "none";
+    }
+});
+
+//As soon as the Content of the page is loaded this happens
+window.addEventListener("DOMContentLoaded", (event) => 
+{
+    const menuToggle = document.querySelector(".menuToggle");   
+    const navigation = document.querySelector(".navigation");
+    menuToggle.onclick = function()
+    {
+        navigation.classList.toggle("open");//When clicked the menu is opened
+    }
+});
+
+</SCRIPT>
+</HEAD>
+<BODY>
+
+
+<div class="navigation">
+    <div class="menuToggle"></div>
+</div>
+
+
+<header>
+    <div class="navbar">
+        <ul>
+            <li><a href="#"><div id="header" oncontextmenu="showMenu(event, 'header')" contentEditable="true">Header Text</div></a></li>
+        </ul>
+    </div>
+</header>
+
+<div id="headerdropdown-menu" class="headerdropdown-menu">
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'font');">Font</a>
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'size');">Size</a>
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'bold');">Bold</a>
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'italic');">Italic</a>
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'colour');">Colour</a>
+</div>
+
+<div id="headerfontdropdown-menu" class="headerfontdropdown-menu">
+    <a href="#">Change Font</a>
+    <ul>
+      <li><a href="#" onclick="changeHeaderData('Arial', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Arial</a></li>
+      <li><a href="#" onclick="changeHeaderData('Papyrus', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Papyrus</a></li>
+      <li><a href="#" onclick="changeHeaderData('Comic Sans Ms', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Comic Sans Ms</a></li>
+    </ul>
+</div>
+
+<div id="headersizedropdown-menu" class="headersizedropdown-menu">
+    <a href="#">Change Size</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 16, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Small</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 24, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Medium</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 36, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Large</li>
+    </ul>
+</div>
+
+<div id="headerbolddropdown-menu" class="headerbolddropdown-menu">
+    <a href="#">Select Bold</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), 'normal', sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Normal</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), 'bold', sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Bold</li>
+    </ul>
+</div>
+
+<div id="headeritalicdropdown-menu" class="headeritalicdropdown-menu">
+    <a href="#">Select Italic</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), 'normal', sessionStorage.getItem('headercolour'));">Normal</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), 'italic', sessionStorage.getItem('headercolour'));">Italic</li>
+    </ul>
+</div>
+
+<div id="headercolourdropdown-menu" class="headercolourdropdown-menu">
+    <a href="#">Change Colour</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'black');">Black</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'red');">Red</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'green');">Green</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'blue');">Blue</li>
+    </ul>
+</div>
+
+<footer>
+    <div class="navbar">
+        <ul>
+            <li><a href="#"><div id="footer" oncontextmenu="showMenu(event, 'footer')" contentEditable="true">Footer Text</div></a></li>
+        </ul>
+    </div>
+</footer>
+
+<div id="footerdropdown-menu" class="footerdropdown-menu">
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'font');">Font</a>
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'size');">Size</a>
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'bold');">Bold</a>
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'italic');">Italic</a>
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'colour');">Colour</a>
+</div>
+
+<div id="footerfontdropdown-menu" class="footerfontdropdown-menu">
+    <a href="#">Change Font</a>
+    <ul>
+      <li><a href="#" onclick="changeFooterData('Arial', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Arial</a></li>
+      <li><a href="#" onclick="changeFooterData('Papyrus', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Papyrus</a></li>
+      <li><a href="#" onclick="changeFooterData('Comic Sans Ms', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Comic Sans Ms</a></li>
+    </ul>
+</div>
+
+<div id="footersizedropdown-menu" class="footersizedropdown-menu">
+    <a href="#">Change Size</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 16, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Small</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 24, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Medium</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 36, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Large</li>
+    </ul>
+</div>
+
+<div id="footerbolddropdown-menu" class="footerbolddropdown-menu">
+    <a href="#">Select Bold</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), 'normal', sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Normal</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), 'bold', sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Bold</li>
+    </ul>
+</div>
+
+<div id="footeritalicdropdown-menu" class="footeritalicdropdown-menu">
+    <a href="#">Select Italic</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), 'normal', sessionStorage.getItem('footercolour'));">Normal</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), 'italic', sessionStorage.getItem('footercolour'));">Italic</li>
+    </ul>
+</div>
+
+<div id="footercolourdropdown-menu" class="footercolourdropdown-menu">
+    <a href="#">Change Colour</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'black');">Black</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'red');">Red</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'green');">Green</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'blue');">Blue</li>
+    </ul>
+</div>
+
+<BODY BGCOLOR="white">
+<SCRIPT LANGUAGE="JavaScript"> main(); </SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,1005 @@
+<HTML>
+<HEAD>
+
+<style>
+
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+footer
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.navbar ul
+{
+    list-style-type: none;
+    margin: 2.5px;
+    padding: 0;
+}
+.navbar li
+{
+    display: inline-block;
+}
+.navbar a
+{
+    text-decoration: none;
+    color: #000;
+    width: 100px;
+}
+
+
+.headerdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headerfontdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerfontdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerfontdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headersizedropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headersizedropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headersizedropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headerbolddropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerbolddropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerbolddropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headeritalicdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headeritalicdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headeritalicdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headercolourdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headercolourdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headercolourdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+
+
+
+
+
+.footerdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footerfontdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerfontdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerfontdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footersizedropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footersizedropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footersizedropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footerbolddropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerbolddropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerbolddropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footeritalicdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footeritalicdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footeritalicdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footercolourdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footercolourdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footercolourdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+</style>
+
+<TITLE>WebGent</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+//Global Variables
+
+var headertext,
+    headerfont = sessionStorage.getItem("headerfont"),
+    headersize = sessionStorage.getItem("headersize"),
+    headerbold = sessionStorage.getItem("headerbold"),
+    headerslant = sessionStorage.getItem("headerslant"),
+    headercolour = sessionStorage.getItem("headercolour");
+
+var footertext,
+    footerfont = sessionStorage.getItem("footerfont"),
+    footersize = sessionStorage.getItem("footersize"),
+    footerbold = sessionStorage.getItem("footerbold"),
+    footerslant = sessionStorage.getItem("footerslant"),
+    footercolour = sessionStorage.getItem("footercolour");
+
+
+//Global Classes
+class HeaderData
+{
+    constructor(Text, Font, Size, Bold, Slant, Colour) 
+    {
+        this.header =
+        {
+            text: Text,
+            font: Font,
+            size: Size,
+            bold: Bold, 
+            slant: Slant, 
+            colour: Colour
+        };
+    };
+}
+
+class FooterData
+{
+    constructor(Text, Font, Size, Bold, Slant, Colour) 
+    {
+        this.footer =
+        {
+            text: Text,
+            font: Font,
+            size: Size,
+            bold: Bold, 
+            slant: Slant, 
+            colour: Colour
+        };
+    };
+}
+
+window.addEventListener("load", OnLoad)
+
+function OnLoad()
+{
+    changeHeaderData("Arial", 24, "normal", "normal", "black");
+    changeFooterData("Arial", 24, "normal", "normal", "black");
+}
+
+
+//Function main, which starts the program
+function main()
+{
+    //Initialising local Variables
+    var Loop = true;
+
+    while(Loop)//Loop runs while the variable Loop is true
+    {
+        alert("Welcome to WebGent by LNC Studios");
+        alert("Do you want to:");
+        var choice =  prompt("1: Sign up\n2: Login\n3: Exit"); //Asks for what they want to do
+
+        //Switch statement for the variable choice
+        switch(choice)
+        {
+            case "1": //This happens if they type in 1
+                Loop = false //Sets the variable Loop to false
+                Signup() //Calls Signup
+                break; //Ends the case
+            case "2"://This happens if they type in 2
+                Loop = false//Sets the variable Loop to false
+                Login()//Calls Login
+                break;
+            case "3"://This happens if they type in 3
+                Loop = false//Sets the variable Loop to false
+                alert("Goodbye....")
+                window.close(   )//Closes the window
+                break;
+            case "4":
+                Loop = false
+                localStorage.clear()
+                break;
+            case "5":
+                Loop = false
+                webInit()
+                break;
+            break;//Ends the switch statement
+        }
+    }
+}
+
+//Function to create an account
+function Signup()
+{
+    //Initialising local Variables
+    var choice1 = prompt("Do you want to Signup? (Y or N)");//Asks if they want to Signup or not
+
+    if(choice1 == "Y")//If choice is equal to Y this happens
+    {
+        var Loop1 = true;//Setting Loop1 to true
+
+        while(Loop1)//While Loop1 is true this loop will continue
+        {
+            //Asks for the users, username and passwords
+            let username = prompt("What is your Username?"),
+                password = prompt("What is your Password?");
+
+            /*Initialising formData. It gets the value of "formData" from localstorage
+            or it is equal to an array with nothing inside of it, if the "formData" localstorage
+            is undefined or not made yet*/
+            let formData = JSON.parse(localStorage.getItem("formData")) || [];
+
+            //Depending on if username exists or not, exist returns as true or false
+            let exist = formData.length && JSON.parse(localStorage.getItem("formData")).some(data => data.username === username);
+
+            if(!exist)//If exist is equal to false this happens:
+            {
+                formData.push({ username, password });//The username is pushed into the formData array
+
+                localStorage.setItem("formData", JSON.stringify(formData));//The formData array is stored into localstorage
+
+                Loop1 = false;//Loop is set to false
+
+                alert(username+" has signed up!");
+
+                main();//function main is called
+            }
+            else//If exist is anything other than true this happens:
+            {
+                alert("This username already exisits");
+                alert("Do you want to: ");
+
+                var Loop2 = true; //Setting Loop2 to true 
+
+                while(Loop2)//While Loop2 is true this loop will continue
+                {
+                    var choice2 = prompt("1: Try again\n2: Go back");
+
+                    //Switch statement for the variable choice
+                    switch(choice2)
+                    {
+                        case "1":
+                            Loop2 = false;//Loop2 is set to false
+                            break;
+                        case "2":
+                            Loop1 = false;//Loop1 is set to false
+                            Loop2 = false;//Loop2 is set to false
+                            main()
+                            break;
+                        default:
+                            alert("Invalid Option")
+                            break;
+                        break;//Ends the switch statement
+                    }
+                }
+            }
+        }
+    }
+    else//If choice is anything other than Y, this happens:
+    {
+        main();//function main is called
+    }
+}
+
+//Function to login
+function Login()
+{
+    //Initialising local Variables
+    var choice1 = prompt("Do you want to login? (Y or N)");//Asks if they want to Login or not
+
+    if(choice1 == "Y")//If choice is equal to Y this happens
+    {
+        var Loop1 = true
+        while(Loop1)//While Loop1 is true this loop will continue
+        {
+            let username = prompt("What is your Username?"),
+                password = prompt("What is your Password?");
+            
+            let formData = localStorage.getItem("formData") || [];
+
+            //Depending on if username & password is correct or not, exist returns as true or false
+            let exist = formData.length && JSON.parse(localStorage.getItem("formData")).some(data => data.username === username && data.password === password);
+
+            if(!exist)//If exist is equal to false this happens:
+            {
+                var Loop2 = true
+
+                while(Loop2)//While Loop2 is true this loop will continue
+                {
+                    alert("Your username or password is incorrect");
+
+                    alert("Do you want to:");
+
+                    var choice2 = prompt("1: Try Again\n2: Exit");//Gives a choice if they want to try again or exit
+
+                    switch(choice2)//Switch statement for variable choice2
+                    {
+                        case "1":
+                            Loop2 = false//Loop2 is set to false
+                            break;
+                        case "2":
+                            Loop2 = false//Loop2 is set to false
+                            Loop1 = false//Loop1 is set to false
+                            main()//Function main is called
+                            break; 
+                        default:
+                            alert("Invalid Option")
+                            break;
+                        break;//Ends the switch statement
+                    }
+                }
+            }
+            else//If exist is anything other than false
+            {
+                Loop1 = false;//Loop1 is set to false
+                console.log(username+" has logged in");
+
+                sessionStorage.setItem("loggedUser", username)//Username is set in sessision storage
+
+                webDecisions()//Function webDecisions is called.
+
+            }
+        }
+    }
+    else//If choice1 is anything other than Y, this happens:
+    {
+        main();//Function main is called
+    }
+}
+
+//Function which asks the user what they want to do
+function webDecisions()
+{
+    //Initialising local Variables
+    var Loop = true;
+
+    while(Loop)//While Loop is true this loop will continue
+    {
+        alert("Do you want to:");
+
+        //Asks if they want to create a new website, load a website or go back 
+        var choice = prompt("1: Create a new website\n2: Load a website\n3: Go back");
+
+        switch(choice)//Switch statement for variable choice
+        {
+            case "1":
+                Loop = false//Loop is set to false
+                newWeb()//Function newWeb is called
+                break;
+            case "2":
+                Loop = false//Loop is set to false
+                loadWeb()//Function laodWeb is called
+                break;
+            case "3":
+                Loop = false//Loop is set to false
+                main()//Function main is called
+                break;
+            default:
+                alert("Invalid Option")
+                break;
+            break;//Ends the switch statement
+        }
+    }
+}
+
+//Function that loads a new website for the user
+function newWeb()
+{
+    //Initialising local Variables
+    var Loop1 = true;
+
+    while(Loop1)//While Loop1 is true this loop will continue
+    {
+        let webname = prompt("What do you want to name your website?"),//Asks what they want to name their website
+            username = sessionStorage.getItem("loggedUser");//Gets the value for "loggedUser" from sessionstorage
+
+        /*Initialising nameData. It gets the value of "nameData" from localstorage
+        or it is equal to an array with nothing inside of it, if the "nameData" localstorage
+        is undefined or not made yet*/
+        let nameData = JSON.parse(localStorage.getItem("nameData")) || [];//
+
+        //Depending on if username & webname exist or not, exist returns as true or false
+        let exist = nameData.length && JSON.parse(localStorage.getItem("nameData")).some(data => data.username == username && data.webname == webname);
+
+        if(!exist)//If exist is equal to false this happens:
+        {
+            //Depending on if webname exist or not, exist returns as t rue or false
+            let exist = nameData.length && JSON.parse(localStorage.getItem("nameData")).some(data => data.webname == webname);
+
+            if(!exist)//If exist is equal to false this happens:
+            {
+                nameData.push({ username, webname});//username and webname are pushed into the nameData array
+
+                localStorage.setItem("nameData", JSON.stringify(nameData));//nameData is stored in localStorage
+
+                alert("Website Created")
+
+                console.log("Creating WEBSITE for "+username+" called "+webname);
+
+                sessionStorage.setItem("webname", webname)//webname is stored in sessionstorage
+
+                Loop1 = false;//Loop1 is set to false
+            }
+            else//If exist is anything other than false
+            {
+                alert("Duplicate found!!!\nYou have already used this name");
+            }
+        }
+        else//If exist is anything other than false
+        {
+            alert("This website name is already taken!!");
+        }
+
+    }
+}
+
+//Function to initialise the website
+function webInit()
+{
+    Header();//Function Header is called
+    Footer();//Function Footer is called
+}
+
+//Function to set up the header
+function Header()
+{
+    //Initialising local Variables
+    let headertext = document.getElementById("header").innerHTML,
+        headerfont = sessionStorage.getItem("headerfont"),
+        headersize = sessionStorage.getItem("headersize"),
+        headerbold = sessionStorage.getItem("headerbold"),
+        headerslant = sessionStorage.getItem("headerslant"),
+        headercolour = sessionStorage.getItem("headercolour");
+
+    //If header data = null this happens:
+    if(headerfont == null)
+    {
+        headerfont = "Arial";
+        sessionStorage.setItem("headerfont", headerfont);
+    }
+    if(headersize == null)
+    {
+        headersize = 24 + "px";
+        sessionStorage.setItem("headersize", headersize);
+    }
+    if(headerbold == null)
+    {
+        headerbold = "normal";
+        sessionStorage.setItem("headerbold", headerbold);
+    }
+    if(headerslant == null)
+    {
+        headerslant = "normal";
+        sessionStorage.setItem("headerslant", headerslant);
+    }
+    if(headercolour == null)
+    {
+        headercolour = "black";
+        sessionStorage.setItem("headercolour", headercolour);
+    }
+
+    //headerData is initialised as a new HeaderData Class
+    let headerData = new HeaderData(headertext, headerfont, headersize, headerbold, headerslant, headercolour);
+
+    sessionStorage.setItem("headerData", JSON.stringify(headerData));//headerData is saved in session storage
+}
+
+//Function to change header data
+function changeHeaderData(headerfont, headersize, headerbold, headerslant, headercolour)//Parameters are in the brackets
+{
+    //Gets the header data and sets its to the parameter variables
+    document.getElementById("header").style.fontFamily = headerfont;
+    sessionStorage.setItem("headerfont", headerfont);
+
+    document.getElementById("header").style.fontSize = headersize + "px";
+    sessionStorage.setItem("headersize", headersize);
+
+    document.getElementById("header").style.fontWeight = headerbold;
+    sessionStorage.setItem("headerbold", headerbold);
+
+    document.getElementById("header").style.fontStyle = headerslant;
+    sessionStorage.setItem("headerslant", headerslant); 
+
+    document.getElementById("header").style.color = headercolour;
+    sessionStorage.setItem("headercolour", headercolour);
+}
+
+
+//Function to set up the footer
+function Footer()
+{
+    //Initialising local Variables
+    let footertext = document.getElementById("footer").innerHTML,
+        footerfont = sessionStorage.getItem("footerfont"),
+        footersize = sessionStorage.getItem("footersize"),
+        footerbold = sessionStorage.getItem("footerbold"),
+        footerslant = sessionStorage.getItem("footerslant"),
+        footercolour = sessionStorage.getItem("footercolour");
+
+    //If footer data = null this happens:
+    if(footerfont == null)
+    {
+        footerfont = "Arial";
+        sessionStorage.setItem("footerfont", footerfont);
+    }
+    if(footersize == null)
+    {
+        footersize = 24 + "px";
+        sessionStorage.setItem("footersize", footersize);
+    }
+    if(footerbold == null)
+    {
+        footerbold = "normal";
+        sessionStorage.setItem("footerbold", footerbold);
+    }
+    if(footerslant == null)
+    {
+        footerslant = "normal";
+        sessionStorage.setItem("footerslant", footerslant);
+    }
+    if(footercolour == null)
+    {
+        footercolour = "black";
+        sessionStorage.setItem("footercolour", footercolour);
+    }
+
+    //footerData is initialised as a new footerData Class
+    let footerData = new FooterData(footertext, footerfont, footersize, footerbold, footerslant, footercolour);
+
+    sessionStorage.setItem("footerData", JSON.stringify(footerData));//footerData is saved in session storage
+}
+
+//Function to change the footer text
+function changeFooterData(footerfont, footersize, footerbold, footerslant, footercolour)//Parameters are in the brackets
+{
+    //Gets the footer data and sets its to the parameter variables
+    document.getElementById("footer").style.fontFamily = footerfont;
+    sessionStorage.setItem("footerfont", footerfont);
+
+    document.getElementById("footer").style.fontSize = footersize;
+    sessionStorage.setItem("footersize", footersize);
+
+    document.getElementById("footer").style.fontWeight = footerbold;
+    sessionStorage.setItem("footerbold", footerbold);
+
+    document.getElementById("footer").style.fontStyle = footerslant;
+    sessionStorage.setItem("footerslant", footerslant); 
+
+    document.getElementById("footer").style.color = footercolour;
+    sessionStorage.setItem("footercolour", footercolour);
+}
+
+//Event type function to create a menu whenever the user right clicks the type 
+function showMenu(e, type)//Type is a parameter
+{
+    event.preventDefault();//Prevents the defualt function of the function
+
+    document.body.addEventListener("click", function()//Whenever the body of the code is clicked this occurs
+    {
+        document.getElementById(type+"dropdown-menu").style.display = "none";
+    });
+    
+    //menu is initialised to an element with the id type+"dropdown-menu"
+    var menu = document.getElementById(type+"dropdown-menu");
+    console.log(menu)
+    //Style of the menu is set to the users mouse position
+    menu.style.top = event.clientY + "px";
+    menu.style.left = event.clientX + "px";
+    menu.style.display = "block";//menues display style is set to block
+}
+
+function showSubMenu(event, type, contentEditable)//Type is what type of text it is and, contentEditable is what content should be edited
+{
+    event.preventDefault();//Prevents the default function of the function
+    event.stopPropagation();//Prevents further propogation of the event
+
+    //Gets the element by its id that is going to be edited
+    var EditableContent = document.getElementById(type+contentEditable+"dropdown-menu");
+    EditableContent.style.display = "block";//The style of the submenu is set to block
+    //Style of the sub menu is set to the users mouse position
+    EditableContent.style.top = event.clientY + "px";
+    EditableContent.style.left = event.clientX + "px";
+}
+
+//Event listener which loads a function when the document is clicked
+document.addEventListener("click", function(event) 
+{
+    //Changes the display of the sub-menus to none
+
+
+    var headerfontDropdown = document.getElementById("headerfontdropdown-menu");
+    if (headerfontDropdown.style.display === "block") 
+    {
+        headerfontDropdown.style.display = "none";
+    }
+    var headersizeDropdown = document.getElementById("headersizedropdown-menu");
+    if (headersizeDropdown.style.display === "block") 
+    {
+        headersizeDropdown.style.display = "none";
+    }
+    var headerboldDropdown = document.getElementById("headerbolddropdown-menu");
+    if (headerboldDropdown.style.display === "block") 
+    {
+        headerboldDropdown.style.display = "none";
+    }
+    var headeritalicDropdown = document.getElementById("headeritalicdropdown-menu");
+    if (headeritalicDropdown.style.display === "block") 
+    {
+        headeritalicDropdown.style.display = "none";
+    }
+    var headercolourDropdown = document.getElementById("headercolourdropdown-menu");
+    if (headercolourDropdown.style.display === "block") 
+    {
+        headercolourDropdown.style.display = "none";
+    }
+
+
+    
+    var footerfontDropdown = document.getElementById("footerfontdropdown-menu");
+    if (footerfontDropdown.style.display === "block") 
+    {
+        footerfontDropdown.style.display = "none";
+    }
+    var footersizeDropdown = document.getElementById("footersizedropdown-menu");
+    if (footersizeDropdown.style.display === "block") 
+    {
+        footersizeDropdown.style.display = "none";
+    }
+    var footerboldDropdown = document.getElementById("footerbolddropdown-menu");
+    if (footerboldDropdown.style.display === "block") 
+    {
+        footerboldDropdown.style.display = "none";
+    }
+    var footeritalicDropdown = document.getElementById("footeritalicdropdown-menu");
+    if (footeritalicDropdown.style.display === "block") 
+    {
+        footeritalicDropdown.style.display = "none";
+    }
+    var footercolourDropdown = document.getElementById("footercolourdropdown-menu");
+    if (footercolourDropdown.style.display === "block") 
+    {
+        footercolourDropdown.style.display = "none";
+    }
+});
+</SCRIPT>
+</HEAD>
+<BODY>
+
+<header>
+    <div class="navbar">
+        <ul>
+            <li><a href="#"><div id="header" oncontextmenu="showMenu(event, 'header')" contentEditable="true">Header Text</div></a></li>
+        </ul>
+    </div>
+</header>
+
+<div id="headerdropdown-menu" class="headerdropdown-menu">
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'font');">Font</a>
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'size');">Size</a>
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'bold');">Bold</a>
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'italic');">Italic</a>
+
+    <a href="#" onclick="showSubMenu(event, 'header', 'colour');">Colour</a>
+</div>
+
+<div id="headerfontdropdown-menu" class="headerfontdropdown-menu">
+    <a href="#">Change Font</a>
+    <ul>
+      <li><a href="#" onclick="changeHeaderData('Arial', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Arial</a></li>
+      <li><a href="#" onclick="changeHeaderData('Papyrus', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Papyrus</a></li>
+      <li><a href="#" onclick="changeHeaderData('Comic Sans Ms', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Comic Sans Ms</a></li>
+    </ul>
+</div>
+
+<div id="headersizedropdown-menu" class="headersizedropdown-menu">
+    <a href="#">Change Size</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 16, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Small</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 24, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Medium</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 36, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Large</li>
+    </ul>
+</div>
+
+<div id="headerbolddropdown-menu" class="headerbolddropdown-menu">
+    <a href="#">Select Bold</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), 'normal', sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Normal</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), 'bold', sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Bold</li>
+    </ul>
+</div>
+
+<div id="headeritalicdropdown-menu" class="headeritalicdropdown-menu">
+    <a href="#">Select Italic</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), 'normal', sessionStorage.getItem('headercolour'));">Normal</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), 'italic', sessionStorage.getItem('headercolour'));">Italic</li>
+    </ul>
+</div>
+
+<div id="headercolourdropdown-menu" class="headercolourdropdown-menu">
+    <a href="#">Change Colour</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'black');">Black</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'red');">Red</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'green');">Green</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'blue');">Blue</li>
+    </ul>
+</div>
+
+<footer>
+    <div class="navbar">
+        <ul>
+            <li><a href="#"><div id="footer" oncontextmenu="showMenu(event, 'footer')" contentEditable="true">Footer Text</div></a></li>
+        </ul>
+    </div>
+</footer>
+
+<div id="footerdropdown-menu" class="footerdropdown-menu">
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'font');">Font</a>
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'size');">Size</a>
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'bold');">Bold</a>
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'italic');">Italic</a>
+
+    <a href="#" onclick="showSubMenu(event, 'footer', 'colour');">Colour</a>
+</div>
+
+<div id="footerfontdropdown-menu" class="footerfontdropdown-menu">
+    <a href="#">Change Font</a>
+    <ul>
+      <li><a href="#" onclick="changeFooterData('Arial', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Arial</a></li>
+      <li><a href="#" onclick="changeFooterData('Papyrus', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Papyrus</a></li>
+      <li><a href="#" onclick="changeFooterData('Comic Sans Ms', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Comic Sans Ms</a></li>
+    </ul>
+</div>
+
+<div id="footersizedropdown-menu" class="footersizedropdown-menu">
+    <a href="#">Change Size</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 16, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Small</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 24, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Medium</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 36, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Large</li>
+    </ul>
+</div>
+
+<div id="footerbolddropdown-menu" class="footerbolddropdown-menu">
+    <a href="#">Select Bold</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), 'normal', sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Normal</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), 'bold', sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Bold</li>
+    </ul>
+</div>
+
+<div id="footeritalicdropdown-menu" class="footeritalicdropdown-menu">
+    <a href="#">Select Italic</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), 'normal', sessionStorage.getItem('footercolour'));">Normal</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), 'italic', sessionStorage.getItem('footercolour'));">Italic</li>
+    </ul>
+</div>
+
+<div id="footercolourdropdown-menu" class="footercolourdropdown-menu">
+    <a href="#">Change Colour</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'black');">Black</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'red');">Red</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'green');">Green</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'blue');">Blue</li>
+    </ul>
+</div>
+
+<BODY BGCOLOR="white">
+<SCRIPT LANGUAGE="JavaScript"> main(); </SCRIPT>
+</BODY>
+</HTML>

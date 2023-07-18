@@ -1,0 +1,120 @@
+<HTML>
+<!Foundation Page for building our JavaScript programs>
+<HEAD>
+<TITLE>The Foundation Page</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+//Function main, which starts the program
+function main()
+{
+    //Initialising local Variables
+    var Loop = true;
+
+    while(Loop)//Loop runs while the variable Loop is true
+    {
+        alert("Welcome to WebGent by LNC Studios");
+        alert("Do you want to:");
+        var choice =  prompt("1: Sign up\n2: Login\n3: Exit"); //Asks for what they want to do
+
+        //Switch statement for the variable choice
+        switch(choice)
+        {
+            case "1": //This happens if they type in 1
+                Loop = false //Sets the variable Loop to false
+                Signup() //Calls Signup
+                break; //Ends the case
+            case "2"://This happens if they type in 2
+                Loop = false//Sets the variable Loop to false
+                Login()//Calls Login
+                break;
+            case "3"://This happens if they type in 3
+                Loop = false//Sets the variable Loop to false
+                alert("Goodbye....")
+                window.close(   )//Closes the window
+                break;
+            break;//Ends the switch statement
+        }
+    }
+}
+
+//Function to create an account
+function Signup()
+{
+    //Initialising local Variables
+    var choice1 = prompt("Do you want to Signup? (Y or N)");//Asks if they want to Signup or not
+
+    if(choice1 == "Y")//If choice is equal to Y this happens
+    {
+        var Loop1 = true;//Setting Loop1 to true
+
+        while(Loop1)//While Loop1 is true this loop will continue
+        {
+            //Asks for the users, username and passwords
+            let username = prompt("What is your Username?"),
+                password = prompt("What is your Password?");
+
+            /*Initialising formData. It gets the value of "formData" from localstorage
+            or it is equal to an array with nothing inside of it, if the "formData" localstorage
+            is undefined or not made yet*/
+            let formData = JSON.parse(localStorage.getItem("formData")) || [];
+
+            //Depending on if username exists or not, exist returns as true or false
+            let exist = formData.length && JSON.parse(localStorage.getItem("formData")).some(data => data.username === username);
+
+            if(!exist)//If exist is equal to false this happens:
+            {
+                formData.push({ username, password });//The username is pushed into the formData array
+
+                localStorage.setItem("formData", JSON.stringify(formData));//The formData array is stored into localstorage
+
+                Loop1 = false;//Loop is set to false
+
+                alert(username+" has signed up!");
+
+                main();//function main is called
+            }
+            else//If exist is anything other than true this happens:
+            {
+                alert("This username already exisits");
+                alert("Do you want to: ");
+
+                var Loop2 = true; //Setting Loop2 to true 
+
+                while(Loop2)//While Loop2 is true this loop will continue
+                {
+                    var choice2 = prompt("1: Try again\n2: Go back");
+
+                    //Switch statement for the variable choice
+                    switch(choice2)
+                    {
+                        case "1":
+                            Loop2 = false;//Loop2 is set to false
+                            break;
+                        case "2":
+                            Loop1 = false;//Loop1 is set to false
+                            Loop2 = false;//Loop2 is set to false
+                            main()
+                            break;
+                        default:
+                            alert("Invalid Option")
+                            break;
+                        break;//Ends the switch statement
+                    }
+                }
+            }
+        }
+    }
+    else//If choice is anything other than Y, this happens:
+    {
+        main();//function main is called
+    }
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<BODY BGCOLOR="white">
+<H2>The Foundation Page</H2>
+<!Insert the name of your program here>
+<HR>
+<SCRIPT LANGUAGE="JavaScript"> main(); </SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,2041 @@
+<HTML>
+<HEAD>
+
+<style>
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+button
+{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+body
+{
+    background: #fff;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+footer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.navigation
+{
+    position: fixed;
+    inset: 20px 0 20px 20px;
+    width: 75px;
+    background: #89CFF0;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation ul
+{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: 100%;
+}
+.navigation li
+{
+    display: inline-block;
+}
+.navigation a
+{
+    text-decoration: none;
+    color: #000;
+    width: 100px;
+}
+
+
+
+.newSection 
+{
+    background-color: #f2f2f2;
+    padding: 30px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    min-width: 1000px;
+}
+      
+.newSection h2 
+{
+    margin-bottom: 10px;
+}
+
+.newSection p 
+{
+    line-height: 1.5;
+}
+
+
+
+#dropZone 
+{
+    border: 0.25px dashed gray;
+    padding: 10px;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.navbar ul
+{
+    list-style-type: none;
+    margin: 2.5px;
+    padding: 0;
+}
+.navbar li
+{
+    display: inline-block;
+}
+.navbar a
+{
+    text-decoration: none;
+    color: #000;
+    width: 100px;
+}
+
+
+.headerdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headerfontdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerfontdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerfontdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headersizedropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headersizedropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headersizedropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headerbolddropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headerbolddropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headerbolddropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headeritalicdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headeritalicdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headeritalicdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.headercolourdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.headercolourdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.headercolourdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+
+
+
+
+
+.footerdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footerfontdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerfontdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerfontdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footersizedropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footersizedropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footersizedropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footerbolddropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footerbolddropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footerbolddropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footeritalicdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footeritalicdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footeritalicdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.footercolourdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.footercolourdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.footercolourdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+
+
+
+
+.boxdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.boxdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.boxdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.boxfontdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.boxfontdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.boxfontdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.boxsizedropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.boxsizedropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.boxsizedropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.boxbolddropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.boxbolddropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.boxbolddropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.boxitalicdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.boxitalicdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.boxitalicdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.boxcolourdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.boxcolourdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.boxcolourdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+
+
+
+
+
+
+.sectiondropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.sectiondropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.sectiondropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.sectionfontdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.sectionfontdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.sectionfontdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.sectionsizedropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.sectionsizedropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.sectionsizedropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.sectionbolddropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.sectionbolddropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.sectionbolddropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.sectionitalicdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.sectionitalicdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.sectionitalicdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+.sectioncolourdropdown-menu 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.sectioncolourdropdown-menu a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.sectioncolourdropdown-menu a:hover 
+{
+    background-color: #f1f1f1
+}
+
+#sectionHeader
+{
+    text-align: center;
+}
+#sectionText
+{
+    text-align: center;
+}
+</style>
+
+<BODY>
+
+<div class="navigation">
+    <div class="menuToggle"></div>
+    <ul>
+        <a href="#">
+            <span id="textBox" class="textBox" draggable="true">Text Box</span>
+        </a>
+
+        <a href="#">
+            <span id="section" class="section" draggable="true">Section</span>
+        </a>
+    </ul>
+</div>
+
+<header>
+    <div class="navbar">
+        <ul>
+            <button id="SaveData" onClick="saveWebData()" type="button">Save</button>
+
+            <li><a href="#"><div id="header" oncontextmenu="showMenu(event, 'header')" contentEditable="true">Header Text</div></a></li>
+        </ul>
+    </div>
+</header>
+
+<div id="headerdropdown-menu" class="headerdropdown-menu">
+
+    <li><a href="#" onclick="showSubMenu(event, 'header', 'font');">Font</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'header', 'size');">Size</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'header', 'bold');">Bold</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'header', 'italic');">Italic</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'header', 'colour');">Colour</a></li>
+</div>
+
+<div id="headerfontdropdown-menu" class="headerfontdropdown-menu">
+    <a href="#">Change Font</a>
+    <ul>
+      <li><a href="#" onclick="changeHeaderData('Arial', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Arial</a></li>
+      <li><a href="#" onclick="changeHeaderData('Papyrus', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Papyrus</a></li>
+      <li><a href="#" onclick="changeHeaderData('Comic Sans Ms', sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Comic Sans Ms</a></li>
+    </ul>
+</div>
+
+<div id="headersizedropdown-menu" class="headersizedropdown-menu">
+    <a href="#">Change Size</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 16, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Small</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 24, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Medium</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), 36, sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Large</li>
+    </ul>
+</div>
+
+<div id="headerbolddropdown-menu" class="headerbolddropdown-menu">
+    <a href="#">Select Bold</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), 'normal', sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Normal</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), 'bold', sessionStorage.getItem('headerslant'), sessionStorage.getItem('headercolour'));">Bold</li>
+    </ul>
+</div>
+
+<div id="headeritalicdropdown-menu" class="headeritalicdropdown-menu">
+    <a href="#">Select Italic</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), 'normal', sessionStorage.getItem('headercolour'));">Normal</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), 'italic', sessionStorage.getItem('headercolour'));">Italic</li>
+    </ul>
+</div>
+
+<div id="headercolourdropdown-menu" class="headercolourdropdown-menu">
+    <a href="#">Change Colour</a>
+    <ul>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'black');">Black</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'red');">Red</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'green');">Green</li>
+        <li><a href="#" onclick="changeHeaderData(sessionStorage.getItem('headerfont'), sessionStorage.getItem('headersize'), sessionStorage.getItem('headerbold'), sessionStorage.getItem('headerslant'), 'blue');">Blue</li>
+    </ul>
+</div>
+
+<footer>
+    <div class="navbar">
+        <ul>
+            <li><a href="#"><div id="footer" oncontextmenu="showMenu(event, 'footer')" contentEditable="true">Footer Text</div></a></li> 
+        </ul>
+    </div>
+</footer>
+
+<div id="footerdropdown-menu" class="footerdropdown-menu">
+
+    <li><a href="#" onclick="showSubMenu(event, 'footer', 'font');">Font</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'footer', 'size');">Size</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'footer', 'bold');">Bold</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'footer', 'italic');">Italic</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'footer', 'colour');">Colour</a></li>
+</div>
+
+<div id="footerfontdropdown-menu" class="footerfontdropdown-menu">
+    <a href="#">Change Font</a>
+    <ul>
+      <li><a href="#" onclick="changeFooterData('Arial', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Arial</a></li>
+      <li><a href="#" onclick="changeFooterData('Papyrus', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Papyrus</a></li>
+      <li><a href="#" onclick="changeFooterData('Comic Sans Ms', sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Comic Sans Ms</a></li>
+    </ul>
+</div>
+
+<div id="footersizedropdown-menu" class="footersizedropdown-menu">
+    <a href="#">Change Size</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 16, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Small</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 24, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Medium</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), 36, sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Large</li>
+    </ul>
+</div>
+
+<div id="footerbolddropdown-menu" class="footerbolddropdown-menu">
+    <a href="#">Select Bold</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), 'normal', sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Normal</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), 'bold', sessionStorage.getItem('footerslant'), sessionStorage.getItem('footercolour'));">Bold</li>
+    </ul>
+</div>
+
+<div id="footeritalicdropdown-menu" class="footeritalicdropdown-menu">
+    <a href="#">Select Italic</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), 'normal', sessionStorage.getItem('footercolour'));">Normal</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), 'italic', sessionStorage.getItem('footercolour'));">Italic</li>
+    </ul>
+</div>
+
+<div id="footercolourdropdown-menu" class="footercolourdropdown-menu">
+    <a href="#">Change Colour</a>
+    <ul>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'black');">Black</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'red');">Red</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'green');">Green</li>
+        <li><a href="#" onclick="changeFooterData(sessionStorage.getItem('footerfont'), sessionStorage.getItem('footersize'), sessionStorage.getItem('footerbold'), sessionStorage.getItem('footerslant'), 'blue');">Blue</li>
+    </ul>
+</div>
+
+
+
+
+<div id="boxdropdown-menu" class="boxdropdown-menu">
+    
+    <li><a href="#" onclick="showSubMenu(event, 'box', 'font');">Font</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'box', 'size');">Size</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'box', 'bold');">Bold</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'box', 'italic');">Italic</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'box', 'colour');">Colour</a></li>
+</div>
+
+<div id="boxfontdropdown-menu" class="boxfontdropdown-menu">
+    <a href="#">Change Font</a>
+    <ul>
+        <li><a href="#" onclick="changeBoxData('Arial', sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), sessionStorage.getItem('boxcolour'));">Arial</a></li>
+        <li><a href="#" onclick="changeBoxData('Papyrus', sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), sessionStorage.getItem('boxcolour'));">Papyrus</a></li>
+        <li><a href="#" onclick="changeBoxData('Comic Sans Ms', sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), sessionStorage.getItem('boxcolour'));">Comic Sans Ms</a></li>
+    </ul>
+</div>
+
+<div id="boxsizedropdown-menu" class="boxsizedropdown-menu">
+    <a href="#">Change Size</a>
+    <ul>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), 8, sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), sessionStorage.getItem('boxcolour'));">Small</a></li>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), 16, sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), sessionStorage.getItem('boxcolour'));">Medium</a></li>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), 24, sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), sessionStorage.getItem('boxcolour'));">Large</a></li>
+    </ul>
+</div>
+
+<div id="boxbolddropdown-menu" class="boxbolddropdown-menu">
+    <a href="#">Select Bold</a>
+    <ul>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), sessionStorage.getItem('boxsize'), 'normal', sessionStorage.getItem('boxslant'), sessionStorage.getItem('boxcolour'));">Normal</a></li>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), sessionStorage.getItem('boxsize'), 'bold', sessionStorage.getItem('boxslant'), sessionStorage.getItem('boxcolour'));">Bold</a></li>
+    </ul>
+</div>
+
+<div id="boxitalicdropdown-menu" class="boxitalicdropdown-menu">
+    <a href="#">Select Italic</a>
+    <ul>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), 'normal', sessionStorage.getItem('boxcolour'));">Normal</a></li>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), 'italic', sessionStorage.getItem('boxcolour'));">Italic</a></li>
+    </ul>
+</div>
+
+<div id="boxcolourdropdown-menu" class="boxcolourdropdown-menu">
+    <a href="#">Change Colour</a>
+    <ul>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), 'black');">Black</a></li>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), 'red');">Red</a></li>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), 'green');">Green</a></li>
+        <li><a href="#" onclick="changeBoxData(sessionStorage.getItem('boxfont'), sessionStorage.getItem('boxsize'), sessionStorage.getItem('boxbold'), sessionStorage.getItem('boxslant'), 'blue');">Blue</a></li>
+    </ul>
+</div>
+
+
+
+
+
+<div id="sectiondropdown-menu" class="sectiondropdown-menu">
+
+    <li><a href="#" onclick="showSubMenu(event, 'section', 'font');">Font</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'section', 'size');">Size</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'section', 'bold');">Bold</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'section', 'italic');">Italic</a></li>
+
+    <li><a href="#" onclick="showSubMenu(event, 'section', 'colour');">Colour</a></li>
+</div>
+
+<div id="sectionfontdropdown-menu" class="sectionfontdropdown-menu">
+    <a href="#">Change Font</a>
+    <ul>
+        <li><a href="#" onclick="changeSectionData('Arial', sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), sessionStorage.getItem('sectioncolour'));">Arial</a></li>
+        <li><a href="#" onclick="changeSectionData('Papyrus', sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), sessionStorage.getItem('sectioncolour'));">Papyrus</a></li>
+        <li><a href="#" onclick="changeSectionData('Comic Sans Ms', sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), sessionStorage.getItem('sectioncolour'));">Comic Sans Ms</a></li>
+    </ul>
+</div>
+
+<div id="sectionsizedropdown-menu" class="sectionsizedropdown-menu">
+    <a href="#">Change Size</a>
+    <ul>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), 8, sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), sessionStorage.getItem('sectioncolour'));">Small</li>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), 16, sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), sessionStorage.getItem('sectioncolour'));">Medium</li>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), 24, sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), sessionStorage.getItem('sectioncolour'));">Large</li>
+    </ul>
+</div>
+
+<div id="sectionbolddropdown-menu" class="sectionbolddropdown-menu">
+    <a href="#">Select Bold</a>
+    <ul>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), sessionStorage.getItem('sectionsize'), 'normal', sessionStorage.getItem('sectionslant'), sessionStorage.getItem('sectioncolour'));">Normal</li>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), sessionStorage.getItem('sectionsize'), 'bold', sessionStorage.getItem('sectionslant'), sessionStorage.getItem('sectioncolour'));">Bold</li>
+    </ul>
+</div>
+
+<div id="sectionitalicdropdown-menu" class="sectionitalicdropdown-menu">
+    <a href="#">Select Italic</a>
+    <ul>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), 'normal', sessionStorage.getItem('sectioncolour'));">Normal</li>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), 'italic', sessionStorage.getItem('sectioncolour'));">Italic</li>
+    </ul>
+</div>
+
+<div id="sectioncolourdropdown-menu" class="sectioncolourdropdown-menu">
+    <a href="#">Change Colour</a>
+    <ul>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), 'black');">Black</li>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), 'red');">Red</li>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), 'green');">Green</li>
+        <li><a href="#" onclick="changeSectionData(sessionStorage.getItem('sectionfont'), sessionStorage.getItem('sectionsize'), sessionStorage.getItem('sectionbold'), sessionStorage.getItem('sectionslant'), 'blue');">Blue</li>
+    </ul>
+</div>
+
+
+<div id='dropZone'></div>
+
+
+
+</BODY>
+<TITLE>WebGent</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+//Global Variables
+
+var headertext,
+    headerfont = sessionStorage.getItem("headerfont"),
+    headersize = sessionStorage.getItem("headersize"),
+    headerbold = sessionStorage.getItem("headerbold"),
+    headerslant = sessionStorage.getItem("headerslant"),
+    headercolour = sessionStorage.getItem("headercolour");
+
+var footertext,
+    footerfont = sessionStorage.getItem("footerfont"),
+    footersize = sessionStorage.getItem("footersize"),
+    footerbold = sessionStorage.getItem("footerbold"),
+    footerslant = sessionStorage.getItem("footerslant"),
+    footercolour = sessionStorage.getItem("footercolour");
+
+var boxtext,
+    boxfont = sessionStorage.getItem("boxfont"),
+    boxsize = sessionStorage.getItem("boxsize"),
+    boxbold = sessionStorage.getItem("boxbold"),
+    boxslant = sessionStorage.getItem("boxslant"),
+    boxcolour = sessionStorage.getItem("boxcolour"),
+    boxstats = JSON.parse(sessionStorage.getItem("boxstats")) || [];
+
+var sectionheadertext,
+    sectiontext,
+    sectionfont = sessionStorage.getItem("sectionfont"),
+    sectionsize = sessionStorage.getItem("sectionsize"),
+    sectionbold = sessionStorage.getItem("sectionbold"),
+    sectionslant = sessionStorage.getItem("sectionslant"),
+    sectioncolour = sessionStorage.getItem("sectioncolour");
+
+
+//Global Classes
+class HeaderData
+{
+    constructor(Text, Font, Size, Bold, Slant, Colour) 
+    {
+        this.header =
+        {
+            text: Text,
+            font: Font,
+            size: Size,
+            bold: Bold, 
+            slant: Slant, 
+            colour: Colour
+        };
+    };
+}
+
+class FooterData
+{
+    constructor(Text, Font, Size, Bold, Slant, Colour) 
+    {
+        this.footer =
+        {
+            text: Text,
+            font: Font,
+            size: Size,
+            bold: Bold, 
+            slant: Slant, 
+            colour: Colour
+        };
+    };
+}
+
+class BoxData
+{
+    constructor(Text, Font, Size, Bold, Slant, Colour, Stats) 
+    {
+        this.box =
+        {
+            text: Text,
+            font: Font,
+            size: Size,
+            bold: Bold, 
+            slant: Slant, 
+            colour: Colour,
+            stats: Stats
+        };
+    };
+}
+
+class SectionData
+{
+    constructor(HeaderText, Text, Font, Size, Bold, Slant, Colour) 
+    {
+        this.section =
+        {
+            headertext: HeaderText,
+            text: Text,
+            font: Font,
+            size: Size,
+            bold: Bold, 
+            slant: Slant, 
+            colour: Colour
+        };
+    };
+}
+
+
+window.addEventListener("load", OnLoad)
+
+function OnLoad()
+{
+    changeHeaderData("Arial", 24, "normal", "normal", "black");
+    changeFooterData("Arial", 24, "normal", "normal", "black");
+    changeBoxData("Arial", 24, "normal", "normal", "black")
+    changeSectionData("Arial", 24, "normal", "normal", "black")
+}
+
+
+function main()
+{
+    var Loop = true;
+
+    while(Loop)
+    {
+        alert("Welcome to WebGent by LNC Studios");
+        alert("Do you want to:");
+        var choice =  prompt("1: Sign up\n2: Login\n3: Exit");
+
+        switch(choice)
+        {
+            case "1":
+                Loop = false
+                Signup()
+                break;
+
+            case "2":
+                Loop = false
+                Login()
+                break;
+            case "3":
+                Loop = false
+                alert("Goodbye....")
+                window.close(   )
+                break;
+            case "4":
+                Loop = false
+                localStorage.clear()
+                break;
+            case "5":
+                Loop = false
+                webInit()
+                break;
+            break;
+        }
+    }
+}
+
+function Signup()
+{
+    var choice1 = prompt("Do you want to Signup? (Y or N)");
+
+    if(choice1 == "Y")
+    {
+        var Loop1 = true;
+
+        while(Loop1)
+        {
+            let username = prompt("What is your Username?"),
+                password = prompt("What is your Password?");
+
+            let formData = JSON.parse(localStorage.getItem("formData")) || [];
+
+            let exist = formData.length && JSON.parse(localStorage.getItem("formData")).some(data => data.username === username);
+
+            if(!exist)
+            {
+                formData.push({ username, password });
+
+                localStorage.setItem("formData", JSON.stringify(formData));
+
+                Loop1 = false;
+
+                alert(username+" has signed up!");
+
+                main();
+            }
+            else
+            {
+                alert("This username already exisits");
+                alert("Do you want to: ");
+
+                var Loop2 = true;
+
+                while(Loop2)
+                {
+                    var choice = prompt("1: Try again\n2: Go back");
+
+                    switch(choice)
+                    {
+                        case "1":
+                            Loop2 = false
+                            break;
+                        case "2":
+                            Loop1 = false
+                            Loop2 = false
+                            main()
+                            break;
+                        default:
+                            alert("Invalid Option")
+                            break;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    else
+    {
+        main();
+    }
+}
+
+function Login()
+{
+    var choice1 = prompt("Do you want to login? (Y or N)");
+
+    if(choice1 == "Y")
+    {
+        var Loop1 = true
+        while(Loop1)
+        {
+            let username = prompt("What is your Username?"),
+                password = prompt("What is your Password?");
+            
+            let formData = localStorage.getItem("formData") || [];
+
+            let exist = formData.length && JSON.parse(localStorage.getItem("formData")).some(data => data.username === username && data.password === password);
+
+            if(!exist)
+            {
+                var Loop2 = true
+
+                while(Loop2)
+                {
+                    alert("Your username or password is incorrect");
+
+                    alert("Do you want to:");
+
+                    var choice2 = prompt("1: Try Again\n2: Exit");
+
+                    switch(choice2)
+                    {
+                        case "1":
+                            Loop2 = false
+                            break;
+                        case "2":
+                            Loop2 = false
+                            Loop1 = false
+                            main()
+                            break; 
+                        default:
+                            alert("Invalid Option")
+                            break;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Loop1 = false;
+                console.log(username+" has logged in");
+
+                sessionStorage.setItem("loggedUser", username)
+
+                webDecisions();
+            }
+        }
+    }
+    else
+    {
+        main();
+    }
+}
+
+function webDecisions()
+{
+    var Loop = true;
+
+    while(Loop)
+    {
+        alert("Do you want to:");
+
+        var choice = prompt("1: Create a new website\n2: Load a website\n3: Go back");
+
+        switch(choice)
+        {
+            case "1":
+                Loop = false
+                newWeb()
+                break;
+            case "2":
+                Loop = false
+                loadWeb()
+                break;
+            case "3":
+                Loop = false
+                main()
+                break;
+            default:
+                alert("Invalid Option")
+                break;
+            break;
+        }
+    }
+}
+
+function newWeb()
+{
+    var Loop1 = true;
+    var count = 0;
+
+    while(Loop1)
+    {
+        let webname = prompt("What do you want to name your website?"),
+            username = sessionStorage.getItem("loggedUser");
+        
+        let nameData = JSON.parse(localStorage.getItem("nameData")) || [];
+
+        let filteredNameData = nameData.filter(obj => obj.username === username);
+
+        for(let i = 0; i < filteredNameData.length; i++)
+        {
+            count++
+        }
+
+        let exist = nameData.length && JSON.parse(localStorage.getItem("nameData")).some(data => data.username == username && data.webname == webname);
+
+        if(!exist)
+        {
+            if(count < 5)
+            {
+                let exist = nameData.length && JSON.parse(localStorage.getItem("nameData")).some(data => data.webname == webname);
+
+                if(!exist)
+                {
+                    nameData.push({ username, webname});
+
+                    localStorage.setItem("nameData", JSON.stringify(nameData));
+
+                    alert("Website Created")
+
+                    console.log("Creating WEBSITE number "+count+" for "+username+" called "+webname);
+
+                    sessionStorage.setItem("webname", webname)
+
+                    webInit();
+
+                    Loop1 = false;
+                }
+                else
+                {
+                    alert("Duplicate found!!!\nYou have already used this name");
+                }
+            }
+            else if(count > 5)
+            {
+                var Loop2 = true;
+
+                while(Loop2)
+                {
+                    alert("You have reached the 5 website limit...");
+                    alert("Do you want to..");
+                    var limit = prompt("1: Delete a Website\n2: Load another Website\n3: Log Out");
+
+                    switch(limit)
+                    {
+                        case "1":
+                            Loop1 = false;
+                            Loop2 = false;
+                            WebDel();
+                            break;
+                        case "2":
+                            Loop1 = false;
+                            Loop2 = false;
+                            LoadWeb();
+                            break;
+                        case "3":
+                            Loop1 = false;
+                            Loop2 = false;
+                            main();
+                            break;
+                        default:
+                            alert("Invalid Option");
+                            break;
+                        break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            alert("This website name is already taken!!");
+        }
+
+    }
+}
+
+function webInit()
+{
+    Header();
+    Footer();
+    Box()
+    Section();
+}
+
+function showMenu(event, type) 
+{
+    event.preventDefault();
+
+    document.body.addEventListener("click", function() 
+    {
+        document.getElementById(type+"dropdown-menu").style.display = "none";
+    });
+
+    var menu = document.getElementById(type+"dropdown-menu");
+    console.log(menu)
+    menu.style.top = event.clientY + "px";
+    menu.style.left = event.clientX + "px";
+    menu.style.display = "block";
+}
+
+function Header()
+{
+    let headertext = document.getElementById("header").innerHTML,
+        headerfont = sessionStorage.getItem("headerfont"),
+        headersize = sessionStorage.getItem("headersize"),
+        headerbold = sessionStorage.getItem("headerbold"),
+        headerslant = sessionStorage.getItem("headerslant"),
+        headercolour = sessionStorage.getItem("headercolour");
+
+    if(headerfont == null)
+    {
+        headerfont = "Arial";
+    }
+    if(headersize == null)
+    {
+        headersize = 24 + "px";
+    }
+    if(headerbold == null)
+    {
+        headerbold = "normal";
+    }
+    if(headerslant == null)
+    {
+        headerslant = "normal";
+    }
+    if(headercolour == null)
+    {
+        headercolour = "black";
+    }
+
+    let headerData = new HeaderData(headertext, headerfont, headersize, headerbold, headerslant, headercolour);
+
+    sessionStorage.setItem("headerData", JSON.stringify(headerData));
+}
+
+function changeHeaderData(headerfont, headersize, headerbold, headerslant, headercolour)
+{
+    document.getElementById("header").style.fontFamily = headerfont;
+    sessionStorage.setItem("headerfont", headerfont);
+
+    document.getElementById("header").style.fontSize = headersize;
+    sessionStorage.setItem("headersize", headersize);
+
+    document.getElementById("header").style.fontWeight = headerbold;
+    sessionStorage.setItem("headerbold", headerbold);
+
+    document.getElementById("header").style.fontStyle = headerslant;
+    sessionStorage.setItem("headerslant", headerslant); 
+
+    document.getElementById("header").style.color = headercolour;
+    sessionStorage.setItem("headercolour", headercolour);
+}
+
+
+function Footer()
+{
+    let footertext = document.getElementById("footer").innerHTML,
+        footerfont = sessionStorage.getItem("footerfont"),
+        footersize = sessionStorage.getItem("footersize"),
+        footerbold = sessionStorage.getItem("footerbold"),
+        footerslant = sessionStorage.getItem("footerslant"),
+        footercolour = sessionStorage.getItem("footercolour");
+
+    if(footerfont == null)
+    {
+        footerfont = "Arial";
+    }
+    if(footersize == null)
+    {
+        footersize = 24 + "px";
+    }
+    if(footerbold == null)
+    {
+        footerbold = "normal";
+    }
+    if(footerslant == null)
+    {
+        footerslant = "normal";
+    }
+    if(footercolour == null)
+    {
+        footercolour = "black";
+    }
+
+    let footerData = new FooterData(footertext, footerfont, footersize, footerbold, footerslant, footercolour);
+
+    sessionStorage.setItem("footerData", JSON.stringify(footerData));
+}
+
+
+function changeFooterData(footerfont, footersize, footerbold, footerslant, footercolour)
+{
+    document.getElementById("footer").style.fontFamily = footerfont;
+    sessionStorage.setItem("footerfont", footerfont);
+
+    document.getElementById("footer").style.fontSize = footersize;
+    sessionStorage.setItem("footersize", footersize);
+
+    document.getElementById("footer").style.fontWeight = footerbold;
+    sessionStorage.setItem("footerbold", footerbold);
+
+    document.getElementById("footer").style.fontStyle = footerslant;
+    sessionStorage.setItem("footerslant", footerslant); 
+
+    document.getElementById("footer").style.color = footercolour;
+    sessionStorage.setItem("footercolour", footercolour);
+}
+
+function showSubMenu(event, type, contentEditable) 
+{
+    event.preventDefault();
+    event.stopPropagation();
+
+    var EditableContent = document.getElementById(type+contentEditable+"dropdown-menu");
+    EditableContent.style.display = "block";
+    EditableContent.style.top = event.clientY + "px";
+    EditableContent.style.left = event.clientX + "px";
+}
+
+document.addEventListener("click", function(event) 
+{
+    var headerfontDropdown = document.getElementById("headerfontdropdown-menu");
+    if (headerfontDropdown.style.display === "block") 
+    {
+        headerfontDropdown.style.display = "none";
+    }
+    var headersizeDropdown = document.getElementById("headersizedropdown-menu");
+    if (headersizeDropdown.style.display === "block") 
+    {
+        headersizeDropdown.style.display = "none";
+    }
+    var headerboldDropdown = document.getElementById("headerbolddropdown-menu");
+    if (headerboldDropdown.style.display === "block") 
+    {
+        headerboldDropdown.style.display = "none";
+    }
+    var headeritalicDropdown = document.getElementById("headeritalicdropdown-menu");
+    if (headeritalicDropdown.style.display === "block") 
+    {
+        headeritalicDropdown.style.display = "none";
+    }
+    var headercolourDropdown = document.getElementById("headercolourdropdown-menu");
+    if (headercolourDropdown.style.display === "block") 
+    {
+        headercolourDropdown.style.display = "none";
+    }
+
+
+    
+    var footerfontDropdown = document.getElementById("footerfontdropdown-menu");
+    if (footerfontDropdown.style.display === "block") 
+    {
+        footerfontDropdown.style.display = "none";
+    }
+    var footersizeDropdown = document.getElementById("footersizedropdown-menu");
+    if (footersizeDropdown.style.display === "block") 
+    {
+        footersizeDropdown.style.display = "none";
+    }
+    var footerboldDropdown = document.getElementById("footerbolddropdown-menu");
+    if (footerboldDropdown.style.display === "block") 
+    {
+        footerboldDropdown.style.display = "none";
+    }
+    var footeritalicDropdown = document.getElementById("footeritalicdropdown-menu");
+    if (footeritalicDropdown.style.display === "block") 
+    {
+        footeritalicDropdown.style.display = "none";
+    }
+    var footercolourDropdown = document.getElementById("footercolourdropdown-menu");
+    if (footercolourDropdown.style.display === "block") 
+    {
+        footercolourDropdown.style.display = "none";
+    }
+
+
+    var boxfontDropdown = document.getElementById("boxfontdropdown-menu");
+    if (boxfontDropdown.style.display === "block") 
+    {
+        boxfontDropdown.style.display = "none";
+    }
+    var boxsizeDropdown = document.getElementById("boxsizedropdown-menu");
+    if (boxsizeDropdown.style.display === "block") 
+    {
+        boxsizeDropdown.style.display = "none";
+    }
+    var boxboldDropdown = document.getElementById("boxbolddropdown-menu");
+    if (boxboldDropdown.style.display === "block") 
+    {
+        boxboldDropdown.style.display = "none";
+    }
+    var boxitalicDropdown = document.getElementById("boxitalicdropdown-menu");
+    if (boxitalicDropdown.style.display === "block") 
+    {
+        boxitalicDropdown.style.display = "none";
+    }
+    var boxcolourDropdown = document.getElementById("boxcolourdropdown-menu");
+    if (boxcolourDropdown.style.display === "block") 
+    {
+        boxcolourDropdown.style.display = "none";
+    }
+
+
+
+    var sectionfontDropdown = document.getElementById("sectionfontdropdown-menu");
+    if (sectionfontDropdown.style.display === "block") 
+    {
+        sectionfontDropdown.style.display = "none";
+    }
+    var sectionsizeDropdown = document.getElementById("sectionsizedropdown-menu");
+    if (sectionsizeDropdown.style.display === "block") 
+    {
+        sectionsizeDropdown.style.display = "none";
+    }
+    var sectionboldDropdown = document.getElementById("sectionbolddropdown-menu");
+    if (sectionboldDropdown.style.display === "block") 
+    {
+        sectionboldDropdown.style.display = "none";
+    }
+    var sectionitalicDropdown = document.getElementById("sectionitalicdropdown-menu");
+    if (sectionitalicDropdown.style.display === "block") 
+    {
+        sectionitalicDropdown.style.display = "none";
+    }
+    var sectioncolourDropdown = document.getElementById("sectioncolourdropdown-menu");
+    if (sectioncolourDropdown.style.display === "block") 
+    {
+        sectioncolourDropdown.style.display = "none";
+    }
+});
+
+
+window.addEventListener("DOMContentLoaded", (event) => 
+{
+
+    const menuToggle = document.querySelector(".menuToggle");   
+    const navigation = document.querySelector(".navigation")
+
+
+    const dropZone = document.getElementById("dropZone");
+
+
+    const textBox = document.getElementById("textBox");
+    var textBoxCount = localStorage.getItem("textBoxCount") || 0;
+
+    const section = document.getElementById("section");
+
+
+    menuToggle.onclick = function()
+    {
+        navigation.classList.toggle("open")
+    }
+
+    textBox.ondrag = function()
+    {
+        let count = 0
+
+        if(textBox && dropZone) 
+        {
+            textBox.addEventListener("dragstart", function(event) 
+            {
+                event.dataTransfer.setData("text/plain", textBox.id);
+            });
+
+            dropZone.addEventListener("dragover", function(event) 
+            {
+                count++
+                event.preventDefault();
+            });
+
+            dropZone.addEventListener("drop", function(event) 
+            {
+                event.preventDefault();
+
+                let data = event.dataTransfer.getData("text/plain");
+                console.log(data)
+
+                if (data == "textBox") 
+                {
+                    switch(count)
+                    {
+                        case 1:
+                            textBoxCount = textBoxCount+1;
+                            localStorage.setItem("textBoxCount", textBoxCount)
+                            
+                            const newTextBox = document.createElement("div");
+
+                            newTextBox.innerHTML = `
+                            <div id="newTextBox" oncontextmenu="showMenu(event, 'box')" contentEditable="true">TextBox</div>`;
+                            
+                            newTextBox.style.width = "200px";
+                            newTextBox.style.height = "40px";
+                            newTextBox.style.position = "absolute";
+                            newTextBox.style.top = `${event.clientY}px`;
+                            newTextBox.style.left = `${event.clientX}px`;
+
+                            console.log(newTextBox.innerHTML)
+
+
+                            dropZone.appendChild(newTextBox);
+                            
+                            let isDragging = false;
+
+                            let startX, 
+                                startY, 
+                                startLeft, 
+                                startTop;
+
+                            let boxpos = document.getElementById("newTextBox").getBoundingClientRect();
+                            console.log(boxpos.left+"\n"+boxpos.top)
+
+                            newTextBox.addEventListener("mousedown", function(event) 
+                            {
+                                let boxpos = document.getElementById("newTextBox").getBoundingClientRect();
+
+                                console.log(boxpos.left+"\n"+boxpos.top)
+
+                                isDragging = true;
+                                startX = event.clientX;
+                                startY = event.clientY;
+                                startLeft = parseInt(newTextBox.style.left, 10);
+                                startTop = parseInt(newTextBox.style.top, 10);
+                            });
+
+                            newTextBox.addEventListener("mousemove", function(event) 
+                            {
+                                if (isDragging) 
+                                {
+                                    newTextBox.style.left = `${startLeft + event.clientX - startX}px`;
+                                    newTextBox.style.top = `${startTop + event.clientY - startY}px`;
+                                }
+                            });
+
+                            newTextBox.addEventListener("mouseup", function(event) 
+                            {
+                                isDragging = false;
+                            });
+
+                            boxstats.push({textBoxCount, boxpos});
+                            sessionStorage.setItem("boxstats", JSON.stringify(boxstats));
+                            break;
+                        break;
+                    }
+                }
+            });
+        } 
+        else 
+        {
+            console.error("Text Box or Drop Zone element not found");
+        }
+    }
+
+    section.ondrag = function()
+    {
+        let count = 0
+        if(section && dropZone)
+        {
+            section.addEventListener("dragstart", function(event) 
+            {
+                event.dataTransfer.setData("text/plain", section.id);
+            });
+
+            dropZone.addEventListener("dragover", (event) => 
+            {
+                count++
+                event.preventDefault();
+            });
+
+            dropZone.addEventListener("drop", (event) => 
+            {
+                switch(count)
+                {
+                    case 1:
+                        event.preventDefault();
+                        let data = event.dataTransfer.getData("text/plain");
+
+                        if(data == "section")
+                        {
+                            let newSection = document.createElement("div");
+
+                            newSection.className = "newSection";
+                            newSection.style.position = "absolute";
+                            newSection.style.top = "50px";
+                            newSection.style.left = "170px";
+                            newSection.style.padding = "20px";
+                            newSection.style.backgroundColor = "#f0f0f0";
+
+                            newSection.innerHTML = `
+                            <div id="sectionHeader" oncontextmenu="showMenu(event, 'section')" contentEditable="true"><h2>Section Title</h2></div>
+                            <div id="sectionText" oncontextmenu="showMenu(event, 'section')" contentEditable="true"><p>NIGERIANS WE ARE YOUNG AND FREE.</p></div>`;
+
+                            dropZone.appendChild(newSection);
+                        }
+                        break;
+                    break;
+                }
+            });
+        }
+        else
+        {
+            console.error("Section or Drop Zone element not found")
+        }
+    }
+});
+
+function Box()
+{
+    var boxData = []
+
+    if(document.getElementById("newTextBox"))
+    {
+        let boxtext = document.getElementById("newTextBox").innerHTML
+            boxfont = sessionStorage.getItem("boxfont"),
+            boxsize = sessionStorage.getItem("boxsize"),
+            boxbold = sessionStorage.getItem("boxbold"),
+            boxslant = sessionStorage.getItem("boxslant"),
+            boxcolour = sessionStorage.getItem("boxcolour"),
+            boxstats = sessionStorage.getItem("boxstats");
+            console.log(boxstats)
+
+        if(boxfont == null)
+        {
+            boxfont = "Arial";
+        }
+        if(boxsize == null)
+        {
+            boxsize = 16 + "px";
+        }
+        if(boxbold == null)
+        {
+            boxbold = "normal";
+        }
+        if(boxslant == null)
+        {
+            boxslant = "normal";
+        }
+        if(boxcolour == null)
+        {
+            boxcolour = "black";
+        }
+    }
+    else
+    {
+        if(boxfont == null)
+        {
+            boxfont = "Arial";
+        }
+        if(boxsize == null)
+        {
+            boxsize = 16 + "px";
+        }
+        if(boxbold == null)
+        {
+            boxbold = "normal";
+        }
+        if(boxslant == null)
+        {
+            boxslant = "normal";
+        }
+        if(boxcolour == null)
+        {
+            boxcolour = "black";
+        }
+    }
+
+    let tempboxData = boxData.push(new BoxData(boxtext, boxfont, boxsize, boxbold, boxslant, boxcolour, boxstats));
+
+    boxData.push({tempboxData})
+    sessionStorage.setItem("boxData", JSON.stringify(boxData));
+}
+
+
+function changeBoxData(boxfont, boxsize, boxbold, boxslant, boxcolour)
+{
+    if(document.getElementById("newTextBox"))
+    {
+        document.getElementById("newTextBox").style.fontFamily = boxfont;
+        sessionStorage.setItem("boxfont", boxfont);
+
+        document.getElementById("newTextBox").style.fontSize = boxsize;
+        sessionStorage.setItem("boxsize", boxsize);
+
+        document.getElementById("newTextBox").style.fontWeight = boxbold;
+        sessionStorage.setItem("boxbold", boxbold);
+
+        document.getElementById("newTextBox").style.fontStyle = boxslant;
+        sessionStorage.setItem("boxslant", boxslant); 
+
+        document.getElementById("newTextBox").style.color = boxcolour;
+        sessionStorage.setItem("boxcolour", boxcolour);
+    }
+    else
+    {
+        console.error("Text Box does not exist")
+    }
+}
+
+
+function Section()
+{
+    if(document.getElementById("sectionText"))
+    {
+        let sectionheadertext = document.getElementById("sectionHeader").innerHTML,
+            sectiontext = document.getElementById("sectionText").innerHTML,
+            sectionfont = sessionStorage.getItem("sectionfont"),
+            sectionsize = sessionStorage.getItem("sectionsize"),
+            sectionbold = sessionStorage.getItem("sectionbold"),
+            sectionslant = sessionStorage.getItem("sectionslant"),
+            sectioncolour = sessionStorage.getItem("sectioncolour");
+
+        if(sectionfont == null)
+        {
+            sectionfont = "Arial";
+        }
+        if(sectionsize == null)
+        {
+            sectionsize = 16 + "px";
+        }
+        if(sectionbold == null)
+        {
+            sectionbold = "normal";
+        }
+        if(sectionslant == null)
+        {
+            sectionslant = "normal";
+        }
+        if(sectioncolour == null)
+        {
+            sectioncolour = "black";
+        }
+    }
+    else
+    {
+        if(sectionfont == null)
+        {
+            sectionfont = "Arial";
+        }
+        if(sectionsize == null)
+        {
+            sectionsize = 16 + "px";
+        }
+        if(sectionbold == null)
+        {
+            sectionbold = "normal";
+        }
+        if(sectionslant == null)
+        {
+            sectionslant = "normal";
+        }
+        if(sectioncolour == null)
+        {
+            sectioncolour = "black";
+        }
+    }
+
+    let sectionData = new SectionData(sectionheadertext, sectiontext, sectionfont, sectionsize, sectionbold, sectionslant, sectioncolour);
+
+    sessionStorage.setItem("sectionData", JSON.stringify(sectionData));
+}
+
+function changeSectionData(sectionfont, sectionsize, sectionbold, sectionslant, sectioncolour)
+{
+    if(document.getElementById("sectionText"))
+    {
+        document.getElementById("sectionText").style.fontFamily = sectionfont;
+        sessionStorage.setItem("sectionfont", sectionfont);
+
+        document.getElementById("sectionText").style.fontSize = sectionsize;
+        sessionStorage.setItem("sectionsize", sectionsize);
+
+        document.getElementById("sectionText").style.fontWeight = sectionbold;
+        sessionStorage.setItem("sectionbold", sectionbold);
+
+        document.getElementById("sectionText").style.fontStyle = sectionslant;
+        sessionStorage.setItem("sectionslant", sectionslant); 
+
+        document.getElementById("sectionText").style.color = sectioncolour;
+        sessionStorage.setItem("sectioncolour", sectioncolour);
+    }
+    else
+    {
+        console.error("Section Text does not exist")
+    }
+}
+
+function saveWebData()
+{
+    var Loop = true
+
+    while(Loop != false)
+    {
+        var saveandexit = prompt("1: Save \n2: Save and Exit")
+
+        if(saveandexit == 1 || saveandexit == 2)
+        {
+            var webname = sessionStorage.getItem("webname"),
+                loggedUser = sessionStorage.getItem("loggedUser");
+
+            alert("Saving "+webname)
+
+            Header()
+            let headerData = sessionStorage.getItem("headerData");
+            console.log(headerData)
+
+            Footer()
+            let footerData = sessionStorage.getItem("footerData")
+            console.log(footerData)
+
+            Box()
+            let boxData = sessionStorage.getItem("boxData")
+            console.log(boxData)
+
+            Section()
+            let sectionData = sessionStorage.getItem("sectionData")
+            console.log(sectionData)
+
+
+            let WebData = JSON.parse(localStorage.getItem("WebData")) || [];
+
+            let existingIndex = WebData.findIndex(obj => obj.Username == loggedUser && obj.WebName == webname);
+
+            if (existingIndex !== -1) 
+            {
+                WebData[existingIndex] =
+                {
+                    WebName: webname,
+                    Username: loggedUser,
+                    Header: headerData,
+                    Footer: footerData,
+                    TextBox: boxData,
+                    Section: sectionData
+                };
+            } 
+            else
+            {
+                WebData.push({
+                    WebName: webname,
+                    Username: loggedUser,
+                    Header: headerData,
+                    Footer: footerData,
+                    TextBox: boxData,
+                    Section: sectionData
+                });
+            }
+
+            localStorage.setItem("WebData", JSON.stringify(WebData));
+
+            if(saveandexit == 2)
+            {
+                window.location = "Websiter Main (V2).html"
+            }   
+
+            Loop = false
+        }
+    }
+}
+
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="white">
+<SCRIPT LANGUAGE="JavaScript"> main(); </SCRIPT>
+</BODY>
+</HTML>
